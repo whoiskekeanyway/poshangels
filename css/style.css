@@ -1,0 +1,186 @@
+/* Import Poppins font in your CSS */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,900;1,700&family=Quicksand:wght@700&display=swap');
+
+
+/* Apply to body or headings */
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+}
+
+header {
+  background-color: #ffd700;
+  padding: 10px 0;
+  height: 50px;
+
+}
+
+nav {
+  background-color: cadetblue;
+}
+
+#hero {
+  background-image: url('');
+  background-repeat: no-repeat;
+  color: black;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#hero p {
+  font-size: clamp(90px, 5vw, 120px);
+  line-height: 1.3;
+color: gold;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+}
+
+#hero img {
+
+  height: 500px;
+}
+
+#services {
+  /* Add styles for the services section */
+}
+
+#booking {
+  /* Add styles for the booking section */
+}
+
+
+
+/* Footer */
+
+
+footer {
+  display: flex;
+  flex-direction: row;
+  max-width: 1440px;
+  margin: 0 auto;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: floralwhite;
+
+}
+
+.footer-row.one {
+
+  padding-top: 3rem;
+}
+
+.footer-row {
+  display: flex;
+  align-items: center;
+  height: auto;
+  padding: 0.50rem 0.20rem;
+}
+
+
+.footer-logo {
+  width: 200px;
+  height: auto;
+}
+
+.footer-links {
+  padding-left: 0;
+  list-style: none
+}
+
+.footer-links li {
+  display: block
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #005163;
+  font-size: clamp(18px, 3vw, 22px);
+  font-family: var(--ff-accent);
+}
+
+.footer-links li {
+  text-decoration: none;
+  color: #005163;
+  font-size: clamp(18px, 3vw, 22px);
+  text-align: center;
+  font-family: var(--ff-accent);
+  font-weight: 300;
+}
+
+.footer-links a:active,
+.footer-links a:focus,
+.footer-links a:hover {
+  color: #630020;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+h6 {
+  color: #630020;
+  font-size: clamp(20px, 3vw, 24px);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  font-family: var(--ff-primary);
+}
+
+.copyright-container {
+  display: flex;
+  justify-content: end;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0.50rem;
+
+}
+
+#trigger {
+  font-size: 18px;
+  padding-right: 10px;
+  font-family: 'Palanquin', sans-serif;
+  font-weight: 700;
+  color: #005163;
+}
+
+#element-to-show {
+  display: none;
+  z-index: 1;
+  transition: all 0.3s ease-in-out;
+  padding-right: 10px;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+
+
+
+.designer,
+.copyright {
+  text-decoration: none;
+  font-size: 16px;
+
+}
+
+
+.designer {
+  font-size: 16px;
+  color: orangered;
+  font-family: 'Palanquin', sans-serif;
+
+
+}
+
+.copyright {
+  color: #005163;
+
+}
