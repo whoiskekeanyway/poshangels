@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,800&family=Quicksand:wght@300;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+    --clr-primary: #FFC0CB;
+    --clr-secondary: #00FFC2;
+    --clr-background: #444444;
+
+    --clr-fontcolor: #333333;
+
+    --clr-accent: Turquoise;
+    --clr-neutral: #F5FEFD;
+
+    --ff-primary: 'Poppins', sans-serif;
+    --ff-secondary: 'Quicksand', sans-serif;
+    --ff-accent: 'Courgette', cursive;
+
+}
+
+/* Apply styles to the table */
+
+.services {
+    display: flex;
+    flex-direction: column;
+    max-width: 1440px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: var(--clr-neutral);
+
+}
+
+table {
+    border-collapse: collapse;
+    background-color: var(--clr-background);
+    padding: 0.50rem;
+}
+
+tr {}
+
+/* Style table headers */
+
+th {
+    background-color: var(--clr-background);
+    text-align: left;
+    padding: 8px;
+    font-size: clamp(16px, 2vw, 18px);
+    color: var(--clr-secondary);
+
+}
+
+/* Style table cells */
+
+td {
+    text-align: left;
+    padding: 8px;
+    text-transform: capitalize;
+    font-size: clamp(16px, 2vw, 18px);
+    background-color: var(--clr-primary);
+}
+
+
+.services-header {
+    max-width: 500px;
+    color: var(--clr-secondary);
+    font-size: clamp(80px, 3vw, 100px);
+    line-height: 1;
+    letter-spacing: 1px;
+    font-family: var(--ff-accent);
+    font-weight: 300;
+
+}
+
+div p {
+    max-width: 500px;
+    color: var(--clr-fontcolor);
+    font-size: clamp(16px, 2vw, 18px);
+    line-height: 1;
+    letter-spacing: 1px;
+    font-family: var(--ff-secondary);
+    font-weight: 300;
+}
+
+/* Add some hover effect to rows */
+tr:hover {
+    color: var(--clr-neutral);
+    cursor: pointer;
+}
+
+.cornrows {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    padding: 2rem 0;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.cornrows div,
+.treatments div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+
+}
+
+
+
+.cornrows div:nth-child(2) {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+
+.braids div:nth-child(2) {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+    flex: 1;
+
+}
+
+
+
+.braids {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding: 2rem 0;
+    gap: 1rem;
+
+}
+
+.braids div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    flex: 1;
+
+}
+
+.treatments {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-around;
+    padding: 2rem 0.50rem;
+    max-width: 1440px;
+    gap: 1rem;
+
+}
+
+.treatments div {
+    flex: 1;
+    padding: 4px;
+}
+
+.css-button-retro--rose {
+    min-width: 130px;
+    width: fit-content;
+    height: 40px;
+    color: var(--clr-neutral);
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    border: 1px solid var(--clr-fontcolor);
+    color: var(--clr-background);
+    background: transparent;
+    z-index: 0;
+}
+
+.css-button-retro--rose:hover:after {
+    top: 0;
+    left: 0;
+}
+
+.css-button-retro--rose:after {
+    content: "";
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    height: 100%;
+    top: 5px;
+    left: 5px;
+    transition: 0.2s;
+    background-color: var(--clr-primary);
+}
+
+@media (max-width: 768px) and (orientation: portrait) {
+    .braids {
+
+        flex-direction: column;
+
+
+    }
+}
