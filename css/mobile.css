@@ -1,57 +1,29 @@
 @media (max-width: 768px) and (orientation: portrait) {
 
-    /* Styles for small portrait-oriented screens */
-
-    .testimonial-container {}
-
     .testimonial {
         max-width: 300px;
     }
 
-    .laterr {
+
+  
+
+    .home-gallery {
         flex-direction: column;
     }
 
-    .our-story-container {
-        padding: 3rem 0.30rem;
+    .home-gallery img {
+        margin: 0 auto;
+        border-radius: 10px;
     }
-
-    .our-story-container-section {
-        flex-direction: column;
-        gap: 2rem;
-    }
-
-    .our-story-container-section div {
-        flex: 1;
-        max-width: 100%;
-    }
-
-    footer {
-        flex-direction: column;
-    }
-
-        .right img {
-            max-width: 300px;
-          
-    
-    
-        }
-        
-
-.contact-section {
-
-    flex-direction: column;
-   
 
 
 }
-}
 
-@media (min-width: 769px) and (max-width: 1024px) {
 
-    /* Styles for medium-sized screens */
 
-}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {}
 
 @media (min-width: 1025px) and (min-device-pixel-ratio: 2) {
 
@@ -67,61 +39,4 @@
 
 @media (hover: hover) and (pointer: fine) {
     /* Styles for devices with fine pointer control (e.g., mouse) and hover capability */
-}
-
-/* Navbar */
-
-@media screen and (min-width: 50px) and (max-width: 1024px) {
-    .navbar {
-        flex-direction: column;
-        position: relative;
-        padding: 2rem;
-        justify-content: center;
-        align-items: center;
-        height: auto;
-        min-height: 100px;
-
-    }
-
-    .container-icon {
-        width: 100%;
-        max-width: 20%;
-        position: absolute;
-        top: 30px;
-        left: 15px;
-    }
-
-    .icon {
-        max-width: 100px;
-    }
-
-    .menu {
-        display: block;
-        position: absolute;
-        right: 20px;
-        top: 30px;
-    }
-
-    .list-item {
-        display: block;
-    }
-
-    .nav-list {
-        list-style-type: none;
-        width: 100%;
-        text-align: center;
-        padding: 10px;
-        display: none;
-        margin-top: 5rem;
-    }
-
-    .active {
-        display: block;
-    }
-
-    .extra {
-        display: none;
-    }
-
-
 }

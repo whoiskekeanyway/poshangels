@@ -1,83 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,800&family=Quicksand:wght@300;500;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
-
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-:root {
-  --clr-primary: #FFC0CB;
-  --clr-secondary: #00FFC2;
-  --clr-background: #444444;
-
-  --clr-fontcolor: #333333;
-
-  --clr-accent: Turquoise;
-  --clr-neutral: #F5FEFD;
-
-  --ff-primary: 'Poppins', sans-serif;
-  --ff-secondary: 'Quicksand', sans-serif;
-  --ff-accent: 'Courgette', cursive;
-
-}
-
-#faqq {
+.faq-container-ourstory {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  height: auto;
-  padding: 5rem 0rem;
-  align-items: center;
-  background-color: chocolate;
-  max-width: 1440px;
-  margin: 0 auto;
+  gap: 3rem;
+  padding: 3rem 1rem;
+  background-color: var(--clr-accent);
+}
 
+.faq-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 550px;
+  margin: 0 auto;
+  padding: 3rem 1rem;
 }
 
 .faqq {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  gap: 1rem;
-  margin: 0 auto;
-  flex-wrap: wrap;
-  padding: 3rem 1rem;
-  background-color: #FFC0CB;
+  align-items: center;
+  max-width: 800px;
 
 }
 
-.faq-container {
-  max-width: 600px;
-  background-color: cadetblue;
 
-}
 
 .faq {
   background-color: transparent;
   border-radius: 10px;
-  border: 2px solid var(--clr-primary);
-  margin: 20px 0px;
-  padding: 20px;
+  border: 2px solid var(--clr-secondary);
+  padding: 10px;
+  margin-bottom: 0.50rem;
   position: relative;
   overflow: hidden;
-  transition: 0.3s ease;
+  transition: border 0.3s ease, background-color 0.3s ease;
   cursor: pointer;
-  background-color: #00FFC2;
+
 
 }
 
 .faq:hover {
-  border: 2px solid var(--clr-accent);
-  transition: 0.3s ease-in-out
+  border: 2.5px solid var(--clr-neutral-900);
 }
 
 .faq.active {
   background-color: #fff;
-  border: 1px solid #fff;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--clr-primary);
+  box-shadow: 0 3px 10px rgba(139,
+      69,
+      19), 0 3px 6px rgba(254,
+      234,
+      208);
+  padding: 20px;
 }
 
 .faq.active::before,
@@ -89,7 +68,8 @@
   position: absolute;
   top: 20px;
   left: 20px;
-  transition: 0.3s ease;
+  transition: opacity 0.3s ease;
+  /* Smooth opacity transition */
   opacity: 0.2;
   z-index: 0;
 }
@@ -102,26 +82,31 @@
 }
 
 .faq-title {
-  margin: 0 35px 0 0;
-  font-family: var(--ff-primary);
+  font-family: var(--ff-secondary);
+  color: var(--clr-secondary);
   font-weight: 400;
   line-height: 1.3;
-  font-size: clamp(16px, 3vw, 18px);
-  background-color: aliceblue;
+  font-size: clamp(14px, 3vw, 16px);
   width: 100%;
 }
 
 .faq-text {
-  font-family: var(--ff-secondary);
+  font-family: var(--ff-primary);
+  color: var(--clr-neutral-900);
   font-weight: 300;
-  display: none;
+  max-height: 0;
   margin: 10px 0 0;
   line-height: 1.3;
-  font-size: clamp(15px, 2vw, 16px);
+  font-size: clamp(14px, 2vw, 16px);
+  transition: max-height 0.3s ease, opacity 0.3s ease;
+  overflow: hidden;
+  opacity: 0;
+  max-width: 90%;
 }
 
 .faq.active .faq-text {
-  display: block;
+  max-height: 200px;
+  opacity: 1;
 }
 
 .faq-toggle {
@@ -132,14 +117,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
   padding: 0;
   position: absolute;
-  top: 30px;
+  top: 15px;
   right: 30px;
   width: 30px;
-  height: 30px;
+  height: 20px;
 }
+
+
 
 .faq-toggle:focus {
   outline: none;
@@ -150,7 +136,7 @@
 }
 
 .faq.active .faq-toggle .fa-times {
-  color: var(--clr-neutral);
+  color: var(--clr-accent);
   display: block;
 }
 
@@ -159,5 +145,28 @@
 }
 
 .faq.active .faq-toggle {
-  background-color: var(--clr-accent);
+  padding: 1rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .faqq {
+    flex-direction: column;
+    /* Stack items on smaller screens */
+  }
+
+  .faq {
+    padding: 15px;
+    /* Adjust padding for smaller screens */
+  }
+
+  .faq-title {
+    font-size: clamp(14px, 3vw, 16px);
+    /* Responsive font size */
+  }
+
+  .faq-text {
+    font-size: clamp(13px, 2vw, 15px);
+    /* Responsive font size */
+  }
 }

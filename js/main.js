@@ -1,4 +1,3 @@
-
 // Function to dynamically change the date
 
 const footerYear = document.querySelectorAll(".year");
@@ -10,10 +9,16 @@ const toggleBtn = document.querySelector(".menu");
 const nav = document.querySelector(".nav-list");
 const burger = document.querySelector(".menu");
 
+// Add ARIA attributes for accessibility
+toggleBtn.setAttribute("aria-expanded", "false");
+toggleBtn.setAttribute("aria-controls", "nav-list");
+
 toggleBtn.addEventListener("click", () => {
-  nav.classList.toggle("active");
-  //burger animation
+  const isActive = nav.classList.toggle("active");
   burger.classList.toggle("toggle");
+
+  // Update ARIA attributes
+  toggleBtn.setAttribute("aria-expanded", isActive);
 });
 
 function showOnHover(trigger, element) {
@@ -27,11 +32,14 @@ function showOnHover(trigger, element) {
   };
 }
 
-let trigger = document.getElementById("trigger");
-let element = document.getElementById("element-to-show");
-showOnHover(trigger, element);
-
-
+// Add keyboard navigation support
+nav.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    nav.classList.remove("active");
+    burger.classList.remove("toggle");
+    toggleBtn.setAttribute("aria-expanded", "false");
+  }
+});
 
 //Get the button
 var backToTopBtn = document.getElementById("myBtn");
@@ -56,124 +64,3 @@ backToTopBtn.addEventListener("click", function () {
     behavior: "smooth",
   });
 });
-
-document.addEventListener("DOMContentLoaded", function () {
-  const heroSection = document.getElementById("hero");
-  heroSection.style.opacity = "0";
-
-  setTimeout(function () {
-    heroSection.style.transition = "opacity 3s";
-    heroSection.style.opacity = "1";
-  }, 100);
-});
-
-
-
-// Function to add a class that triggers the animation
-function animateText() {
-  const textElement = document.getElementById("animatedText");
-  textElement.style.opacity = 1;
-  textElement.style.transform = "translateY(0)";
-}
-
-// Wait for the page to fully load before triggering the animation
-window.addEventListener("load", animateText);
-
-
-
-// Import ScrollTrigger
-gsap.registerPlugin(ScrollTrigger);
-
-// Animate each image with a stagger effect on scroll
-const images = document.querySelectorAll(".image");
-
-gsap.from(images, {
-  opacity: 0,
-  y: 50,
-  duration: 1,
-  stagger: 0.5, // Time delay between each image animation
-  scrollTrigger: {
-    trigger: ".image",
-    start: "top 60%",
-    end: "top 20%",
-    toggleActions: "play none none reverse",
-    
-  },
-});
-
-
-const testimonialContainer = document.querySelector(".testimonial-container");
-const testimonials = Array.from(testimonialContainer.children);
-
-function smoothScroll() {
-  let animationSpeed = 50;
-  let scrollStep = 1;
-
-  // Check for smaller screens using a media query
-  const mediaQuery = window.matchMedia("(max-width: 768px)");
-
-  function handleResponsiveChange(e) {
-    if (e.matches) {
-      // Smaller screen
-      animationSpeed = 100; // Slower animation on mobile
-      scrollStep = 2; // Larger scroll step on mobile
-      testimonialContainer.style.width = "80%"; // Adjust container width for mobile
-    } else {
-      // Larger screen
-      animationSpeed = 50; // Default animation speed
-      scrollStep = 1; // Default scroll step
-      testimonialContainer.style.width = "100%"; // Default container width
-    }
-  }
-
-  // Initially, call the responsive handler to set the initial values
-  handleResponsiveChange(mediaQuery);
-
-  // Add a listener to respond to changes in screen size
-  mediaQuery.addEventListener("change", handleResponsiveChange);
-
-  const shuffledTestimonials = shuffleArray(testimonials);
-  testimonialContainer.innerHTML = "";
-
-  shuffledTestimonials.forEach((testimonial) => {
-    testimonialContainer.appendChild(testimonial);
-  });
-
-  let scrollingForward = true;
-
-  function scroll() {
-    if (scrollingForward) {
-      testimonialContainer.scrollLeft += scrollStep;
-
-      if (
-        testimonialContainer.scrollLeft >=
-        testimonialContainer.scrollWidth - testimonialContainer.offsetWidth
-      ) {
-        scrollingForward = false;
-      }
-    } else {
-      testimonialContainer.scrollLeft -= scrollStep;
-
-      if (testimonialContainer.scrollLeft <= 0) {
-        scrollingForward = true;
-      }
-    }
-  }
-
-  setInterval(scroll, animationSpeed);
-}
-
-function shuffleArray(array) {
-  const shuffledArray = [...array];
-  for (let i = shuffledArray.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
-  }
-  return shuffledArray;
-}
-
-smoothScroll();
-
-
-
-

@@ -8,9 +8,7 @@ p {
     padding: 0;
 }
 
-body {
-    font-family: Arial, sans-serif;
-}
+
 
 header {
     background-color: #f8f8f8;
@@ -89,13 +87,6 @@ main {
 
 .service p {
     font-size: 16px;
-}
-
-footer {
-    text-align: center;
-    padding: 20px 0;
-    background-color: #333;
-    color: #fff;
 }
 
 .hero {

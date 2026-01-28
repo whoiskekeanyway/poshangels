@@ -1,0 +1,120 @@
+/* Import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+
+/* CSS Reset */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Custom Properties */
+:root {
+    /* Color Palette */
+    --clr-primary: #FFD8D8;
+    /* Brand pink */
+    --clr-secondary: #8B4513;
+    /* Brand brown */
+    --clr-accent: #E6B89C;
+    /* Soft peach */
+    --clr-neutral-100: #FFFFFF;
+    /* White */
+    --clr-neutral-200: #F5F5F5;
+    /* Light gray */
+    --clr-neutral-900: #333333;
+    /* Dark gray */
+    --clr-error: #FF6B6B;
+    /* Error red */
+    --clr-success: #4CAF50;
+    /* Success green */
+
+    /* Typography */
+    --ff-primary: 'Elms Sans', sans-serif;
+    --ff-secondary: 'Merriweather', serif;
+
+    /* Font Sizes */
+    --fs-300: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);
+    --fs-400: clamp(1rem, 0.929rem + 0.36vw, 1.125rem);
+    --fs-500: clamp(1.125rem, 1.027rem + 0.49vw, 1.313rem);
+    --fs-600: clamp(1.313rem, 1.156rem + 0.78vw, 1.625rem);
+    --fs-700: clamp(1.5rem, 1.321rem + 0.89vw, 1.875rem);
+
+    /* Font Weights */
+    --fw-light: 300;
+    --fw-regular: 400;
+    --fw-medium: 500;
+    --fw-bold: 700;
+
+    /* Spacing */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+
+    /* Border Radius */
+    --border-radius: 5px;
+
+    /* Transitions */
+    --transition: all 0.3s ease;
+}
+
+/* Base Styles */
+body {
+    font-family: var(--ff-primary);
+    font-size: var(--fs-400);
+    line-height: 1.5;
+    color: var(--clr-neutral-900);
+    background-color: var(--clr-neutral-100);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--ff-secondary);
+    font-weight: var(--fw-bold);
+    line-height: 1.1;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Utility Classes */
+.container {
+    width: min(100% - 2rem, 75rem);
+    margin-inline: auto;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-primary {
+    color: var(--clr-primary);
+}
+
+.text-secondary {
+    color: var(--clr-secondary);
+}
+
+.bg-primary {
+    background-color: var(--clr-primary);
+}
+
+.bg-secondary {
+    background-color: var(--clr-secondary);
+}

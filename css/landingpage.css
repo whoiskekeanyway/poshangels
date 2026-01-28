@@ -1,0 +1,268 @@
+  .hero {
+      display: flex;
+      flex-direction: row;
+      min-height: 100dvh;
+      max-width: 1240px;
+      margin: 0 auto;
+      position: relative;
+      background-image: url('/homepage.webp');
+      background-size: 700px;
+      background-position: right center;
+      background-repeat: no-repeat;
+  }
+
+  /* Overlay for better text readability */
+  .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(to right,
+              rgba(255, 255, 255, 0.95) 0%,
+              rgba(255, 255, 255, 0.85) 20%,
+              rgba(255, 255, 255, 0.3) 50%,
+              transparent 100%);
+      z-index: 1;
+  }
+
+  /* Alternative overlay option - uncomment if you prefer softer pink tint */
+  /* .hero::before {
+            background: linear-gradient(
+                to right,
+                rgba(255, 238, 248, 0.95) 0%,
+                rgba(255, 238, 248, 0.85) 40%,
+                rgba(255, 238, 248, 0.3) 70%,
+                transparent 100%
+            );
+        } */
+
+  .words-div {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+      gap: 2rem;
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      animation: fadeInLeft 1s ease-out;
+
+  }
+
+  .salon-name {
+      font-size: clamp(30px, 7vw, 800px);
+      font-family: var(--ff-primary);
+      font-weight: 600;
+      color: var(--clr-neutral-900);
+      line-height: 1.1;
+      letter-spacing: -0.02em;
+      animation: fadeInUp 1s ease-out 0.2s both;
+  }
+
+  .salon {
+      display: block;
+      font-size: clamp(25px, 4vw, 45px);
+      font-weight: 600;
+      margin-top: 0.5rem;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.8);
+  }
+
+  .subtitle {
+      font-size: clamp(18px, 2vw, 30px);
+      color: var(--clr-secondary);
+      font-weight: 600;
+      margin-bottom: 1rem;
+      text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.8);
+      animation: fadeInUp 1s ease-out 0.4s both;
+  }
+
+  #cta-button {
+      display: inline-block;
+      padding: 1.25rem 1rem;
+      background: var(--clr-primary);
+      text-decoration: none;
+      font-size: 1.25rem;
+      font-weight: 700;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      text-align: center;
+      max-width: 280px;
+      animation: fadeInUp 1s ease-out 0.6s both;
+      position: relative;
+      overflow: hidden;
+  }
+
+  #cta-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(8, 7, 7, 0.3), transparent);
+      transition: left 0.5s ease;
+
+  }
+
+  #cta-button:hover::before {
+      left: 100%;
+  }
+
+  #cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(236, 72, 153, 0.5);
+      color: var(--clr-accent);
+      font-weight: 700;
+  }
+
+  #cta-button:active {
+      transform: translateY(-1px);
+  }
+
+  /* Decorative sparkles */
+  .sparkle {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: radial-gradient(circle, #fbbf24, transparent);
+      border-radius: 50%;
+      animation: twinkle 2s ease-in-out infinite;
+      opacity: 0.7;
+      z-index: 2;
+  }
+
+  .sparkle:nth-child(1) {
+      top: 15%;
+      left: 10%;
+      animation-delay: 0s;
+  }
+
+  .sparkle:nth-child(2) {
+      top: 60%;
+      left: 15%;
+      animation-delay: 0.5s;
+  }
+
+  .sparkle:nth-child(3) {
+      top: 30%;
+      left: 25%;
+      animation-delay: 1s;
+  }
+
+  @keyframes fadeInLeft {
+      from {
+          opacity: 0;
+          transform: translateX(-50px);
+      }
+
+      to {
+          opacity: 1;
+          transform: translateX(0);
+      }
+  }
+
+  @keyframes fadeInUp {
+      from {
+          opacity: 0;
+          transform: translateY(30px);
+      }
+
+      to {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  }
+
+  @keyframes twinkle {
+
+      0%,
+      100% {
+          opacity: 0.4;
+          transform: scale(1);
+      }
+
+      50% {
+          opacity: 0.9;
+          transform: scale(1.2);
+      }
+  }
+
+  /* Mobile Responsive */
+  @media (max-width: 968px) {
+      .hero {
+          background-position: center right;
+      }
+
+      .hero::before {
+          background: linear-gradient(to bottom,
+                  rgba(255, 255, 255, 0.95) 0%,
+                  rgba(255, 255, 255, 0.90) 50%,
+                  rgba(255, 255, 255, 0.5) 80%,
+                  transparent 100%);
+      }
+
+      .words-div {
+          padding: 3rem 2rem;
+          text-align: center;
+          align-items: center;
+          max-width: 100%;
+      }
+
+      .salon-name {
+          font-size: 3rem;
+      }
+
+      .salon {
+          font-size: 1.5rem;
+      }
+
+      .subtitle {
+          font-size: 1.25rem;
+      }
+
+      #cta-button {
+          font-size: 1.1rem;
+          padding: 1rem 2.5rem;
+          max-width: 100%;
+      }
+  }
+
+  @media (max-width: 480px) {
+      .hero {
+          min-height: 100dvh;
+          background-position: center;
+      }
+
+      .hero::before {
+          background: linear-gradient(to bottom,
+                  rgba(255, 255, 255, 0.97) 0%,
+                  rgba(255, 255, 255, 0.93) 10%,
+                  rgba(255, 255, 255, 0.6) 85%,
+                  transparent 100%);
+      }
+
+      .words-div {
+          padding: 2rem 1.5rem;
+      }
+
+      .salon-name {
+          font-size: 2.5rem;
+      }
+
+      .salon {
+          font-size: 1.25rem;
+      }
+
+      .subtitle {
+          font-size: 1.1rem;
+      }
+
+      #cta-button {
+          padding: 0.9rem 2rem;
+          font-size: 1rem;
+      }
+  }
