@@ -1,5 +1,4 @@
-/* Import fonts */
-@import url('https://fonts.googleapis.com/css2?family=Elms+Sans:ital,wght@0,100..900;1,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Pacifico&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,800&family=Quicksand:wght@300;500;700&display=swap');
 
 /* CSS Reset */
 *,
@@ -12,27 +11,16 @@
 
 /* Custom Properties */
 :root {
-    /* Color Palette */
     --clr-primary: #FFD8D8;
-    /* Brand pink */
     --clr-secondary: #8B4513;
-    /* Brand brown */
-    --clr-accent: #E6B89C;
-    /* Soft peach */
-    --clr-neutral-100: #FFFFFF;
-    /* White */
-    --clr-neutral-200: #F5F5F5;
-    /* Light gray */
-    --clr-neutral-900: #333333;
-    /* Dark gray */
-    --clr-error: #FF6B6B;
-    /* Error red */
-    --clr-success: #4CAF50;
-    /* Success green */
+    --clr-fontcolor: #333333;
+    --clr-neutral: #FEEAD0;
+
+
 
     /* Typography */
-    --ff-primary: 'Elms Sans', sans-serif;
-    --ff-secondary: 'Merriweather', serif;
+    --ff-primary: 'Poppins', sans-serif;
+    --ff-secondary: 'Quicksand', sans-serif;
 
     /* Font Sizes */
     --fs-300: clamp(0.875rem, 0.875rem + 0vw, 0.875rem);
@@ -67,7 +55,7 @@ body {
     font-size: var(--fs-400);
     line-height: 1.5;
     color: var(--clr-neutral-900);
-    background-color: var(--clr-neutral-100);
+    background-color: var(--clr-neutral);
 }
 
 h1,
@@ -77,8 +65,6 @@ h4,
 h5,
 h6 {
     font-family: var(--ff-secondary);
-    font-weight: var(--fw-bold);
-    line-height: 1.1;
 }
 
 a {
@@ -93,28 +79,3 @@ img {
     display: block;
 }
 
-/* Utility Classes */
-.container {
-    width: min(100% - 2rem, 75rem);
-    margin-inline: auto;
-}
-
-.text-center {
-    text-align: center;
-}
-
-.text-primary {
-    color: var(--clr-primary);
-}
-
-.text-secondary {
-    color: var(--clr-secondary);
-}
-
-.bg-primary {
-    background-color: var(--clr-primary);
-}
-
-.bg-secondary {
-    background-color: var(--clr-secondary);
-}
