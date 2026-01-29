@@ -19,12 +19,10 @@
     overflow: hidden;
     white-space: nowrap;
     padding: 3rem 0.10rem;
-    background-color: var(--clr-neutral-100);
+    background-color: var(--clr-neutral);
 }
 
-.servicespage {
-
-}
+.servicespage {}
 
 
 
@@ -47,7 +45,7 @@
 }
 
 .services-page {
-    height: auto !important; 
+    height: auto !important;
 }
 
 .testimonial p:nth-of-type(2):before {}
@@ -75,7 +73,7 @@
     justify-content: center;
     align-items: center;
     max-width: 1000px;
-    background-color: var(--clr-accent);
+    background-color: var(--clr-primary);
     padding: 3rem 1rem;
     border-radius: 10px;
     margin: 0 1rem;
@@ -83,7 +81,7 @@
 
 .testimonial-container-header h4 {
     flex: 60%;
-    color: var(--clr-neutral-900);
+    color: var(--clr-accent);
     font-family: var(--ff-primary);
     font-size: clamp(30px, 4vw, 70px);
     letter-spacing: 2px;
